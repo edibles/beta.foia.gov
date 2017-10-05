@@ -1,7 +1,9 @@
+.DS_Store
 .htpasswd
 .jekyll-metadata
 .sass-cache
 .tmp/
 _site
 node_modules/
+npm-debug.log
 /www.foia.gov/assets/

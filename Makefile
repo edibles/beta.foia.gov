@@ -20,10 +20,12 @@ clean:
 
 serve:
 	npm run watch &
-	bundle exec jekyll serve
+	bundle exec jekyll build --watch &
+	node js/dev-server.js
 
 test:
 	npm test
+	npm run lint
 	bin/htmlproofer.sh
 	# Canary test. Make sure any changes to the static content is
 	# intentional. If any differences are output, confirm they were
@@ -31,7 +33,5 @@ test:
 	diff $(DIFFOPTS) _www.foia.gov-canary _site
 	@echo OK
 
-deploy:
-	bin/cf_deploy.sh foia-dot-gov doj-foia-discovery prototype
 
 .PHONY: all build clean deploy test

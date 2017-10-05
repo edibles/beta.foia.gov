@@ -8,6 +8,7 @@ function toJsonSchemaType(metadataFieldType) {
   // https://github.com/mozilla-services/react-jsonschema-form#alternative-widgets
   switch (metadataFieldType) {
     case 'checkbox':
+    case 'radio':
       type = 'boolean';
       break;
     case 'file':
@@ -51,12 +52,13 @@ function toUiSchemaProperty(metadataField) {
   };
 
   if (metadataField.example) {
-    uiSchemaProperty['ui:placeholder'] = metadataField.example;
+    uiSchemaProperty['ui:placeholder'] = `${metadataField.example}`; // Coerce to string
   }
 
   // Map metadata field type to ui:widget or ui:options
   switch (metadataField.type) {
     case 'checkbox':
+    case 'radio':
     case 'file':
     case 'textarea':
       uiSchemaProperty['ui:widget'] = metadataField.type;

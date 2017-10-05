@@ -1,0 +1,36 @@
+.doj-banner {
+  background-color: $color-black;
+  img {
+    float: right;
+  }
+}
+
+.usa-header-extended {
+  border-bottom: none; // WDS override
+  .usa-nav {
+    border-top: none; // WDS override
+    .usa-nav-inner {
+      margin-top: auto; // WDS override
+    }
+  }
+}
+
+.usa-nav-primary a,
+.usa-nav-primary > li > a,
+.usa-nav-secondary-links a {
+  color: $color-primary-darkest;
+}
+
+.usa-logo {
+  a {
+    display: flex;
+  }
+  img {
+    width: 70px;
+    height: 70px;
+    margin-right: 1.5rem;
+  }
+  h1 {
+    margin: 1rem 0;
+  }
+}
