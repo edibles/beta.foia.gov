@@ -1,0 +1,114 @@
+---
+- name: agency_name
+  type: text
+  description: Name of the tier 1 agency.
+  required: yes
+  example: '<code>"Department of Justice"</code>'
+
+- name: agency_component_name
+  type: text
+  description: Name of the department, bureau, or office.
+  required: yes
+  example: '<code>"Office of Information Policy"</code>'
+
+- name: name_first
+  Type: text
+  description: First name of the requester.
+  required: no
+  example: '<code>"George"</code>'
+
+- name: name_last
+  type: text
+  description: Last name of the requester.
+  required: no
+  example: '<code>"Washington"</code>'
+
+- name: address_line1
+  type: text
+  description: Requester’s street mailing address.
+  required: no
+  example: '<code>"1800 F Street"</code>'
+
+- name: address_line2
+  type: text
+  description: Line 2 for requester’s mailing address.
+  required: no
+  example: '<code>"Suite 400"</code>'
+
+- name: address_city
+  type: text
+  description: City for requester’s mailing address.
+  required: no
+  example: '<code>"Mount Vernon"</code>'
+
+- name: address_state_province
+  type: text
+  description: State or province for requester’s mailing address.
+  required: no
+  example: '<code>"Virginia"</code>'
+
+- name: address_zip_postal_code
+  type: text
+  description: Zip code or postal code for requester’s mailing address.
+  required: no
+  example: '<code>"98273"</code>'
+
+- name: request_description
+  type: text
+  description: Description of the records the requester is seeking.
+  required: yes
+  example: '<code>"I am seeking records pertaining to ..."</code>'
+
+- name: processing_fees
+  type: money
+  description: The amount in USD that a requester is willing to pay in order to cover costs related to this request.
+  required: no
+  example: '<code>25.00</code>'
+
+- name: fee_waiver
+  type: boolean
+  description: The requester would like to request that fees associated with the request be waived.
+  required: no, defaults to false
+  example: '<code>false</code>'
+
+- name: expedited
+  type: boolean
+  description: The requester would like this request to be processed on an expedited basis.
+  required: no, defaults to false
+  example: '<code>false</code>'
+
+- name: company_organization
+  type: text
+  description: Name of the organization or company on which the requester is making a request on behalf of.
+  required: no
+  example: '<code>"Newspaper Inc"</code>'
+
+- name: email
+  type: text
+  description: Email address of the requester.
+  required: yes
+  example: '<code>"george.washington@example.com"</code>'
+
+- name: phone_number
+  type: text
+  description: Phone number of the requester.
+  required: no
+  example: '<code>"+15551234567"</code>'
+
+- name: fax_number
+  type: text
+  description: Fax number of the requester.
+  required: no
+  example: '<code>"+15551234589"</code>'
+
+- name: attachments
+  type: [object]
+  description: Documents or attachments supporting the request provided by the requester.
+  required: no
+  example: '<code>[{"filename": "letter.pdf", "content_type": "application/pdf", "filesize": 27556, "filedata": "YSBiYXNlNjQgZW5jb2RlZCBmaWxlCg=="}]</code>'
+
+- name: '*'
+  type: Determined by the [agency metadata file][agency-metadata-file-schema]. See [agency component specific form fields](#agency-component-specific-form-fields) below.
+  description: Agency component specific request form field as specified in your [agency's metadata file][agency-metadata-file-schema].
+  required: if applicable
+  example: See <a href="#agency-form-fields-example">below</a>.
