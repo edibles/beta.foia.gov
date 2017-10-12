@@ -29,8 +29,9 @@ class AgencyComponentRequestPage extends Component {
     const agencyComponentId = this.props.match.params.agencyComponentId;
 
     // Check agency component exists in store
+    // TODO this should be a get by id
     const { agencyComponent } = agencyComponentStore.getState();
-    if (!agencyComponent.id) {
+    if (!agencyComponent.id || agencyComponent.id !== agencyComponentId) {
       requestActions.fetchAgencyComponent(agencyComponentId)
         .then(requestActions.receiveAgencyComponent)
         .catch((error) => {

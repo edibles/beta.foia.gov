@@ -84,7 +84,7 @@ class Tabs extends Component {
             <section>
               <ul className="sidebar_progress-bar">
                 <li>
-                  <a className="step_active" href="">
+                  <a className="step_active" href="#root_requester_contact__title">
                     <span>Requester contact</span>
                   </a>
                 </li>
